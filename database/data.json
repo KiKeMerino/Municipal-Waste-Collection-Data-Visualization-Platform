@@ -1,0 +1,48 @@
+{
+    "lista contenedores": [
+        {"tabla": "Inventario_contenedores"},
+        {"id": "Id_contenedor"},
+        {"codigo": "Código"},
+        {"tag": "Tag"},
+        {"tipo de contenedor": "Tipo Contenedor"},
+        {"tipo de residuo": "Tipo Residuo"}
+    ],
+
+    "ecopuntos": [
+        {"tabla": "Eco-Cont"},
+        {"id del ecopunto": "Cod Ecopunto"},
+        {"id del contenedor": "Id_contenedor"}
+    ],
+
+    "localizacion ecopuntos": [
+        {"tabla": "Ecopuntos"},
+        {"id del ecopunto": "Id_Ecopunto"},
+        {"latitud":"Latitud"},
+        {"longitud":"Longitud"}
+    ],
+
+    "recogidas historico": [
+        {"tabla": "Recogidas 2021"},
+        {"peso": "Peso (Kg)"},
+        {"fecha": "Fecha"},
+        {"codigo contenedor": "Cod Contenedor"}
+    ],
+
+    "recogidas actual": [
+        {"tabla": "Pesadas_cont"},
+        {"peso": "Peso"},
+        {"fecha": "Fecha"},
+        {"tipo de residuo": "Garbage"},
+        {"tag": "Tag"}
+
+    ],
+
+    "tipos contenedor":[
+        {"tabla": "Contenedor_tipos"},
+        {"peso minimo": "Limite_min"},
+        {"peso maximo": "Peso_max"}
+    ],
+
+    "ocultar vidrio": false
+
+}

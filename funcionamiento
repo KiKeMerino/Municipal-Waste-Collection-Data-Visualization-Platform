@@ -1,0 +1,55 @@
+FUNCIONAMIENTO DE LA WEB:
+
+La web consta de:
+    - El logo del Ayuntamiento de Granada al que podemos clickar y que redijirá al inicio de la web (un mapa con todos los ecopuntos en Granada).
+    - Una pequeña nota con la fecha y hora de la ultima consulta a la web.
+    - Un mensaje para realizar cualquier tipo de petición redirigiendo a la pagina web o app de "Granada Mejora"
+    - Un menú de 4 opciones con el que moverse en la página web.
+
+El menú tiene 4 opciones con las que podremos navegar a través de las distintas partes de la web:
+    - Inicio: se trata de un mapa en el que se visualizan todos los ecopuntos con su enlace a la url para visualizarlo con mas detalle.
+
+    - Recogidas del ecopunto: se visualiza el numero de recogidas del ultimo mes, siendo este intervalo de tiempo personalizable, y tambien una tabla con las ultimas recogidas que se han hecho en el ecopunto, pudiendose cambiar este valor a las 5, 10, 20 o incluso las ultimas recogidas de cada contenedor del ecopunto.
+
+    - Pesos del ecopunto se visualiza el peso recogido en el intervalo de tiempo seleccionado de los contenedores del ecopunto, y tambien una tabla con las ultimas recogidas que se han hecho en el ecopunto, pudiendose cambiar este valor a las 5, 10, 20 o incluso las ultimas recogidas de cada contenedor del ecopunto.
+    
+    - Peso recogido en 2021: en el que se ve la suma de los pesos del contenedor seleccionado por meses del historico de 2021.
+
+    Este menú será siempre visible por lo que podremos navegar hacia cualquier punto siempre que queramos con dicho menú.
+    Si se intenta visualizar los pesos o las recogidas del ecopunto sin haber seleccionado ninguno, saltará una alerta diciendo que debemos seleccionar algún ecopunto y redirigiendo al inicio para poder seleccionarlo en el mapa. 
+
+
+
+
+CÓDIGO:
+
+Software de gestión de información de ecopuntos de Granada con un servidor LAMP con las siguientes versiones:
+    - Debian 10
+    - Apache 2.4.51 (Unix)
+    - MariaDB 10.3.27
+    - PHP 7.4.25 (cli)
+
+
+ARCHIVO ECOPUNTO.PHP:
+
+El método de acceso a la web se realizará mediante el escaneo de un código QR asociado a cada ecopunto. El cual se redigirá directamente al apartado de ecopunto en el que se visualizarán:
+    - El número que contenedores que componen ese ecopunto asi como una imagen de los distintos residuos de ese ecopunto para poder ocultarlos o no en la grafica.
+    - Una grafica con las recogidas del último mes de esos contenedores (siempre que los tengas seleccionados con el checkbox, por defecto lo estarán)
+    - Una tabla con las 5 ultimas recogidas en ese ecopunto, siendo este número modificable pudiendo verse las 5, 10, 20, o incluso la ultima recogida de cada residuo, es decir, si hay 4 contenedores (3 de resto y 1 de papel), habrá 2 filas en la tabla, ultima recogida de resto y ultima recogida de papel.
+
+La web tambien cuenta con una opcion para realizar algun tipo de mejora o queja redirigiendo al usuario a la web de granada mejora o directamente a bajarse la aplicacion desde GooglePlay.
+
+Las tablas que se utilizan son de la base de datos 'sigma': Inventario_contenedores, Eco-Cont, Pesadas_cont, Recogidas_2021.
+    - Inventario_contenedores, Eco-Cont >> para visualizar el numero de contenedores del ecopunto así como el tipo de residuo
+    - Pesadas_cont, Eco-Cont, Inventario_contenedores >> para visualizar la tabla con las ultimas recogidas del ecopunto
+    - Recogias 2021, Pesadas_cont >> para las graficas con la recogidas y los pesos
+
+
+ARCHIVOS INDEX.PHP Y CONTENEDORES.PHP:
+
+Aquí simplemente se visualizarán el numero de contenedores activos de cada tipo que hay en Granada.
+Al hacer click sobre ellos se redigirá a una página en la cual se visualizará una grafica con el peso total recogido de ese residuo en todo el año 2021.
+
+Las tablas que se utilizan son las de la base de datos 'sigma': Inventario_contenedores, Recogidas 2021.
+    - Inventario_contenedores >> para visualizar el numero de contenedores de cada tipo.
+    - Recogidas 2021 >> para la gráfica con el peso

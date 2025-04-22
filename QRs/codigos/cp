@@ -1,0 +1,1 @@
+s -f -r /home/kike/ecopuntos/assets /home/kike/ecopuntos/contenedores.php /home/kike/ecopuntos/database /home/kike/ecopuntos/ecopunto.php /home/kike/ecopuntos/historico.php /home/kike/ecopuntos/index.php /home/kike/ecopuntos/menu.php /home/kike/ecopuntos/QRs /home/kike/ecopuntos/README /var/www/html/ -i
